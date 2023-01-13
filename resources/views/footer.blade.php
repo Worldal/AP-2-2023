@@ -12,10 +12,10 @@
         <div class="col-xs-6 col-md-3">
           <h6 class="text-titre">Categories :</h6>
           <ul class="footer-links">
-            <li><a href="http://scanfcode.com/category/c-language/">Cuisine bretonne authentique.</a></li>
-            <li><a href="http://scanfcode.com/category/front-end-development/">Ingrédients frais et locaux.</a></li>
-            <li><a href="http://scanfcode.com/category/back-end-development/">Menus adaptés.</a></li>
-            <li><a href="http://scanfcode.com/category/java-programming-language/">Cadre agréable.</a></li>
+            <li><a href="./#aPropos">Cuisine bretonne authentique.</a></li>
+            <li><a href="./#Ingredient">Ingrédients frais et locaux.</a></li>
+            <li><a href="">Menus adaptés.</a></li>
+            <li><a href="">Cadre agréable.</a></li>
           </ul>
         </div>
 
@@ -34,7 +34,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2022 Tous droits réservés
+          <p class="copyright-text">Copyright &copy; 2023 Tous droits réservés
        <a href="/">Breizh Cooks</a>.
           </p>
         </div>

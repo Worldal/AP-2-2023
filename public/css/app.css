@@ -20,6 +20,7 @@ font-family: 'Domine', serif; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
 }
 body{
     overflow: overlay;
@@ -50,6 +51,7 @@ body::-webkit-scrollbar-thumb {
     padding: 6px 100px;
     font-family: 'Abril Fatface', cursive;
     margin: auto;
+    align-items: center;
     background: var(--colorPrincipal);
     transition: 1s;
 }
@@ -89,7 +91,7 @@ body::-webkit-scrollbar-thumb {
 
     color: #91684D;
 }
-/* --------------- PAGE ACCUEIL --------------- */
+/* -------------------------------- PAGE ACCUEIL -------------------------------- */
 #video-background {
     filter: blur(10px);
     opacity: 30%;
@@ -124,6 +126,9 @@ body::-webkit-scrollbar-thumb {
     min-height: 80vh;
     background: var(--darkMode);
 }
+
+/* -------------------------------- FOOTER --------------------------------- */
+
 .footer {
     list-style-type: none;
     display: flex;
@@ -298,3 +303,68 @@ body::-webkit-scrollbar-thumb {
     font-weight:600
   }
 }
+
+/* -------------------------------- DROPDOWN --------------------------------- */
+.dropdown {
+    padding: 5px 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    position: relative;
+    font-size: 18px;
+    perspective: 1000px;
+    z-index: 100;
+  }
+  .dropdown:hover {
+    color: #91684D;
+    cursor: pointer;
+  }
+  .dropdown:hover .dropdown_menu li {
+    display: block;
+  }
+  .dropdown_menu {
+    display:block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    perspective: 1000px;
+    z-index: -1;
+  }
+  .dropdown_menu li {
+    display: block;
+    color: #fff;
+    background-color: #34495e;
+    padding: 10px 10px;
+    font-size: 16px;
+    opacity: 0;
+  }
+  .dropdown_menu li:hover {
+    background-color: #2980b9;
+  }
+  .dropdown:hover .dropdown_menu--animated {
+    display: block;
+  }
+  .dropdown_menu--animated {
+    display: none;
+  }
+  .dropdown_menu--animated li {
+    display: block;
+    opacity: 1;
+  }
+  .dropdown_menu-6 {
+    animation: growDown 400ms ease-in-out forwards;
+    transform-origin: top center;
+  }
+  @keyframes growDown {
+    0% {
+      transform: scaleY(0);
+    }
+    70% {
+      transform: scaleY(1.07);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
