@@ -38,6 +38,16 @@ body::-webkit-scrollbar-thumb {
     background-color: rgb(175, 175, 175); /* color of the scroll thumb */
     border-radius: 20px; /* roundness of the scroll thumb */
     }
+
+.logo {
+    width: 10em;
+    padding: 20px;
+    transition: 0.5s;
+}
+.logo:hover {
+    filter: drop-shadow(0 0 0.75rem var(--colorPrincipal));
+}
+/* -------------------------------- NAV BAR -------------------------------- */
 .nav-right {
   padding-right: 25px;
 }
@@ -89,7 +99,16 @@ body::-webkit-scrollbar-thumb {
 }
 .text-liens :hover {
 
-    color: #91684D;
+    /* color: #91684D; */
+    filter: drop-shadow(0 0 0.75rem #ffffff) drop-shadow(0 0 0.15rem #ffffff);
+}
+.logo-nav {
+    width: 5em;
+    padding: 20px;
+    transition: 0.5s;
+}
+.logo-nav:hover {
+    filter: drop-shadow(0 0 0.75rem #ffffff) drop-shadow(0 0 0.15rem #ffffff);
 }
 /* -------------------------------- PAGE ACCUEIL -------------------------------- */
 #video-background {
@@ -305,26 +324,31 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* -------------------------------- DROPDOWN --------------------------------- */
+.menu {
+    display: flex;
+    justify-content: center;
+  }
 .dropdown {
-    padding: 5px 70px;
+    padding: 20px 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #000;
+    color: #fff;
+    background: #c06162;
+    background: #34495e;
     position: relative;
     font-size: 18px;
     perspective: 1000px;
     z-index: 100;
   }
   .dropdown:hover {
-    color: #91684D;
+    background: #2980b9;
     cursor: pointer;
   }
   .dropdown:hover .dropdown_menu li {
     display: block;
   }
   .dropdown_menu {
-    display:block;
     position: absolute;
     top: 100%;
     left: 0;
@@ -333,10 +357,10 @@ body::-webkit-scrollbar-thumb {
     z-index: -1;
   }
   .dropdown_menu li {
-    display: block;
+    display: none;
     color: #fff;
     background-color: #34495e;
-    padding: 10px 10px;
+    padding: 10px 20px;
     font-size: 16px;
     opacity: 0;
   }
@@ -354,7 +378,7 @@ body::-webkit-scrollbar-thumb {
     opacity: 1;
   }
   .dropdown_menu-6 {
-    animation: growDown 400ms ease-in-out forwards;
+    animation: growDown 300ms ease-in-out forwards;
     transform-origin: top center;
   }
   @keyframes growDown {

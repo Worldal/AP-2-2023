@@ -1,13 +1,14 @@
+@include ('header')
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img alt="Logo" class="logo" src="/image/Logo Breizh's Cooks.png">
             </a>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+            {{ __('Tu as oublié ton mot de passe ? Vous pouvez réinitialiser ton mot passe ici vous n\'avez qu\'a indiquer simplement votre adresse e-mail et nous vous enverrons par e-mail un lien de réinitialisation de mot de passe qui vous permettra d\'en choisir un nouveau.') }}
         </div>
 
         <!-- Session Status -->
@@ -15,19 +16,18 @@
 
         <form method="POST" action="{{ route('password.email') }}">
             @csrf
-
             <!-- Email Address -->
             <div>
                 <x-input-label for="email" :value="__('Email')" />
                 <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
-
             <div class="flex items-center justify-end mt-4">
                 <x-primary-button>
-                    {{ __('Email Password Reset Link') }}
+                    {{ __('Envoyer l\'email') }}
                 </x-primary-button>
             </div>
         </form>
     </x-auth-card>
 </x-guest-layout>
+@include('footer')

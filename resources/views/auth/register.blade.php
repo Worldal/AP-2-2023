@@ -1,8 +1,9 @@
 <x-guest-layout>
+    @include ('header')
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img alt="Logo" class="logo" src="/image/Logo Breizh's Cooks.png">
             </a>
         </x-slot>
 
@@ -11,9 +12,19 @@
 
             <!-- Name -->
             <div>
-                <x-input-label for="name" :value="__('Name')" />
+                <x-input-label for="login" :value="__('Login')" />
+                <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('Login')" required autofocus />
+                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            </div>
+            <div>
+                <x-input-label for="name" :value="__('Prénom')" />
                 <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            </div>
+            <div>
+                <x-input-label for="surname" :value="__('Nom de famille')" />
+                <x-text-input id="surname" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input-error :messages="$errors->get('surname')" class="mt-2" />
             </div>
 
             <!-- Email Address -->
@@ -48,11 +59,11 @@
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('Déjà inscrit ?') }}
                 </a>
 
                 <x-primary-button class="ml-4">
-                    {{ __('Register') }}
+                    {{ __('S\'inscrire') }}
                 </x-primary-button>
             </div>
         </form>
