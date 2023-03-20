@@ -18,10 +18,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $PRIX_HT
  * @property int $STOCK_PLAT
  * @property bool $ESTPLATDUJOUR
+ * @property string $LIEN_IMG
  * 
  * @property Collection|Appartenir[] $appartenirs
- * @property Collection|Commander[] $commanders
  * @property Collection|Contenir[] $contenirs
+ * @property Favorite $favorite
+ * @property Collection|Emporter[] $emporters
+ * @property Collection|Place[] $places
  * @property Collection|Reapprovisionnement[] $reapprovisionnements
  *
  * @package App\Models
@@ -43,7 +46,8 @@ class Plat extends Model
 		'DESCRIPTION_PLAT',
 		'PRIX_HT',
 		'STOCK_PLAT',
-		'ESTPLATDUJOUR'
+		'ESTPLATDUJOUR',
+		'LIEN_IMG'
 	];
 
 	public function appartenirs()
@@ -51,14 +55,26 @@ class Plat extends Model
 		return $this->hasMany(Appartenir::class, 'ID_PLAT');
 	}
 
-	public function commanders()
-	{
-		return $this->hasMany(Commander::class, 'ID_PLAT');
-	}
-
 	public function contenirs()
 	{
 		return $this->hasMany(Contenir::class, 'ID_PLAT');
+	}
+
+	public function favorite()
+	{
+		return $this->hasOne(Favorite::class, 'ID_PLAT');
+	}
+
+	public function emporters()
+	{
+		return $this->belongsToMany(Emporter::class, 'quantite_plat_emporter', 'ID_PLAT', 'ID_COMMANDE_EMPORTER')
+					->withPivot('QUANTITE');
+	}
+
+	public function places()
+	{
+		return $this->belongsToMany(Place::class, 'quantite_plat_place', 'ID_PLAT', 'ID_COMMANDE_PLACE')
+					->withPivot('QUANTITE');
 	}
 
 	public function reapprovisionnements()

@@ -1,34 +1,57 @@
+
 @include ('header')
+
 <!DOCTYPE html>
 <html lang="fr">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/image/Logo Breizh's Cooks Round.webp">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Site officiel de Breizh Cooks">
     <meta property="og:site_name" content="Breizh Cooks">
     <meta name="robots" content="index, follow">
     <meta property="og:site_name" content="Breizh Cooks">
     <meta name="googlebot" content="notranslate"/>
     <link rel="stylesheet" href="css/app.css">
-    <script src="js/app.js"></script>
-    <script src="js/lottie.js"></script>
-    <script src="js/animation.js"></script>
+    <meta name="color-scheme" content="only dark">
+    <meta name="creator" content="world_al">
+    <meta name="creator" content="It's AL">
 
     <head>
         <title>Breizh Cooks</title>
-
     </head>
     <body class="back">
         <div>
             <div class="part1">
                 <video id="video-background" autoplay muted loop controlslist="nodownload nofullscreen noremoteplayback">
-                    <source src="/videos/Food.mp4" type="video/mp4">
+                    <source src="/videos/Food.webm" type="video/mp4">
                 </video>
                 <h1>Breizh Cooks</h1>
 
             </div>
             <div class="part2">
-                <p id="aPropos">Lorem ipsum dolor sit amet. In aspernatur iste ea cupiditate numquam ut placeat culpa et voluptates itaque et veritatis dolorum ex libero tempore? Ut dolores totam et nihil molestias et blanditiis nesciunt ex sint asperiores ea velit aperiam ut architecto veritatis. Id inventore recusandae et esse fuga id expedita iusto et numquam reiciendis qui fugit cupiditate est numquam necessitatibus. Qui consectetur omnis aut quos excepturi eum architecto eligendi At quod sequi. </p><p>Et exercitationem dicta a modi consequuntur ad omnis suscipit At animi nostrum eum impedit accusantium id asperiores molestiae et dolorem velit. Ut aperiam exercitationem est ullam voluptate est ducimus unde aut omnis fugiat non eius omnis et velit illo. Sed ipsam odio est inventore ducimus qui rerum laboriosam eum nemo omnis sed voluptates laboriosam non quae reiciendis. Eum dolorem neque sed officiis suscipit aut labore ratione est soluta doloremque ab voluptatem dignissimos sit magni officia est culpa omnis? </p><p>Est aspernatur vitae est error maiores aut soluta minus nam exercitationem fuga sit quidem veniam ea fugit quis vel consequuntur sint. Aut architecto consequatur et nulla laboriosam et officia consequuntur hic nobis dolores et perferendis explicabo ut voluptatem labore. 33 voluptatem accusantium aut temporibus laboriosam eum galisum Quis ea vitae consequatur. </p><ul><li>Aut eius rerum ut quia dolorum eos internos assumenda? </li><li>Ut molestiae adipisci sed molestiae internos ut distinctio reiciendis et dignissimos minus! </li></ul>
-                <p id="Ingredient">Lorem ipsum dolor sit amet. In aspernatur iste ea cupiditate numquam ut placeat culpa et voluptates itaque et veritatis dolorum ex libero tempore? Ut dolores totam et nihil molestias et blanditiis nesciunt ex sint asperiores ea velit aperiam ut architecto veritatis. Id inventore recusandae et esse fuga id expedita iusto et numquam reiciendis qui fugit cupiditate est numquam necessitatibus. Qui consectetur omnis aut quos excepturi eum architecto eligendi At quod sequi. </p><p>Et exercitationem dicta a modi consequuntur ad omnis suscipit At animi nostrum eum impedit accusantium id asperiores molestiae et dolorem velit. Ut aperiam exercitationem est ullam voluptate est ducimus unde aut omnis fugiat non eius omnis et velit illo. Sed ipsam odio est inventore ducimus qui rerum laboriosam eum nemo omnis sed voluptates laboriosam non quae reiciendis. Eum dolorem neque sed officiis suscipit aut labore ratione est soluta doloremque ab voluptatem dignissimos sit magni officia est culpa omnis? </p><p>Est aspernatur vitae est error maiores aut soluta minus nam exercitationem fuga sit quidem veniam ea fugit quis vel consequuntur sint. Aut architecto consequatur et nulla laboriosam et officia consequuntur hic nobis dolores et perferendis explicabo ut voluptatem labore. 33 voluptatem accusantium aut temporibus laboriosam eum galisum Quis ea vitae consequatur. </p>
+                <h2 id="aPropos" class="titre-acc">Lieu authentique.</h2>
+                <div class="container-photo">
+                    <p >Bienvenue au restaurant "Breizh Cooks" situé sur la côte bretonne, où notre chef étoilé et son équipe de cuisine vous proposent une expérience culinaire unique en son genre.</p>
+                    <img class="photo-acc" src="/image/resteau-bretagne.webp">
+                </div>
+
+                <P><HR NOSHADE></P>
+
+                <h2 id="Menus" class="titre-acc">Menu typique.</h2>
+                <div class="container-photo">
+                    <img class="photo-acc" src="/image/menu-specialite-bretonnes.webp">
+                    <p>Notre menu est inspiré par les produits de la mer et les spécialités bretonnes, avec une touche d'innovation et de modernité. Nous travaillons exclusivement avec des fournisseurs locaux pour garantir la fraîcheur et la qualité des ingrédients que nous utilisons.</p>
+
+                </div>
+
+                <P><HR NOSHADE></P>
+
+                <h2 id="Ingredient" class="titre-acc">Ingrédients frais et locaux.</h2>
+                <div class="container-photo">
+                    <p>le restaurant utilise des ingrédients frais et de qualité, principalement des produits de la mer et des spécialités bretonnes.</p>
+                    <img class="photo-acc" src="/image/eleveur-animaux.webp">
+                </div>
 
             </div>
             <div class="">
@@ -45,5 +68,8 @@
             </div>
         </div>
     </body>
+    <script src="/public/js/app.js"></script>
+    <script src="js/lottie.js"></script>
+    <script src="js/animation.js"></script>
 </html>
 @include('footer')

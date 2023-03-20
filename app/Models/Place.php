@@ -6,18 +6,21 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Place
  * 
  * @property int $ID_COMMANDE
- * @property int $NUM_TABLE
  * @property int $ID_COMPTE
+ * @property int $NUM_TABLE
+ * @property bool $FACTURE
+ * @property Carbon $DATE_COMMANDE
  * 
- * @property Commande $commande
- * @property Serveur $serveur
- * @property Table $table
+ * @property Compte $compte
+ * @property Collection|Plat[] $plats
  *
  * @package App\Models
  */
@@ -25,32 +28,33 @@ class Place extends Model
 {
 	protected $table = 'place';
 	protected $primaryKey = 'ID_COMMANDE';
-	public $incrementing = false;
 	public $timestamps = false;
 
 	protected $casts = [
-		'ID_COMMANDE' => 'int',
+		'ID_COMPTE' => 'int',
 		'NUM_TABLE' => 'int',
-		'ID_COMPTE' => 'int'
+		'FACTURE' => 'bool'
+	];
+
+	protected $dates = [
+		'DATE_COMMANDE'
 	];
 
 	protected $fillable = [
+		'ID_COMPTE',
 		'NUM_TABLE',
-		'ID_COMPTE'
+		'FACTURE',
+		'DATE_COMMANDE'
 	];
 
-	public function commande()
+	public function compte()
 	{
-		return $this->belongsTo(Commande::class, 'ID_COMMANDE');
+		return $this->belongsTo(Compte::class, 'ID_COMPTE');
 	}
 
-	public function serveur()
+	public function plats()
 	{
-		return $this->belongsTo(Serveur::class, 'ID_COMPTE');
-	}
-
-	public function table()
-	{
-		return $this->belongsTo(Table::class, 'NUM_TABLE');
+		return $this->belongsToMany(Plat::class, 'quantite_plat_place', 'ID_COMMANDE_PLACE', 'ID_PLAT')
+					->withPivot('QUANTITE');
 	}
 }

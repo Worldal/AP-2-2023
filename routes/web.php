@@ -20,6 +20,12 @@ Route::get('/', function () {
 Route::get('/nos-resto', function () {
     return view('nos-restaurant');
 });
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/nos-menus', function () {
+    return view('menu');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -32,3 +38,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::fallback(function() {
+    return view('404'); // la vue 404.blade.php
+ });

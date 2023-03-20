@@ -13,6 +13,9 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
+    ServerSignature Off
+    Header always unset X-Powered-By
+    Header unset X-Powered-By
 
     # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d

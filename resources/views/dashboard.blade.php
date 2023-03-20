@@ -1,4 +1,8 @@
 @include ('header')
+<head>
+    <link rel="icon" type="image/png" sizes="16x16" href="/image/Logo Breizh's CooksB.png">
+    <title>Profil - Breizh Cooks</title>
+</head>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">

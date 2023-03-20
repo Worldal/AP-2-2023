@@ -12,19 +12,18 @@
         <div class="col-xs-6 col-md-3">
           <h6 class="text-titre">Categories :</h6>
           <ul class="footer-links">
-            <li><a href="./#aPropos">Cuisine bretonne authentique.</a></li>
-            <li><a href="./#Ingredient">Ingrédients frais et locaux.</a></li>
-            <li><a href="">Menus adaptés.</a></li>
-            <li><a href="">Cadre agréable.</a></li>
+            <li><a href="./#aPropos">Lieu authentique.</a></li>
+            <li><a href="./#Menus">Menu typique</a></li>
+            <li><a href="/#Ingredient">Ingrédients frais et locaux.</a></li>
           </ul>
         </div>
 
         <div class="col-xs-6 col-md-3">
           <h6 class="text-titre">Nos liens :</h6>
           <ul class="text-liens">
-              <li><a href="/about/">A propos</a></li>
-              <li><a href="/contact/">Contactez nous</a></li>
-              <li><a href="/privacy-policy/">Politique de confidentialité</a></li>
+              <li><a href="/about">A propos</a></li>
+              <li><a href="/contact">Contactez nous</a></li>
+              <li><a href="/privacy-policy">Politique de confidentialité</a></li>
               {{-- <li><a href="/sitemap/">Sitemap</a></li> --}}
           </ul>
         </div>
