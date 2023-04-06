@@ -1,6 +1,6 @@
 @include ('header')
 <head>
-    <link rel="icon" type="image/png" sizes="16x16" href="/image/Logo Breizh's Cooks Round.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/image/logo-breizhs-cooks-round.webp">
     <title>S'inscrire - Breizh Cooks</title>
 </head>
 <x-guest-layout>

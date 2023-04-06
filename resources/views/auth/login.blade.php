@@ -3,7 +3,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <img alt="Logo" class="logo" src="/image/Logo Breizh's Cooks.png">
+                <img alt="Logo" class="logo" src="/image/logo-breizhs-cooks-round.webp">
             </a>
         </x-slot>
 

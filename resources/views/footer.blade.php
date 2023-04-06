@@ -33,7 +33,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2023 Tous droits réservés
+          <p >Copyright &copy; 2023 Tous droits réservés
        <a href="/">Breizh Cooks</a>.
           </p>
         </div>
@@ -45,6 +45,9 @@
             <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
             <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
           </ul>
+        </div>
+        <div class="col-md-8 col-sm-6 col-xs-12">
+            <i><p class="copyright-text">Attention ce site n'est pas un site officiel, ceci est une entreprise fictive.<br>Texte généré par ChatGPT et image généré par Midjourney/Dalle2.</p><i>
         </div>
       </div>
     </div>

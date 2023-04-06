@@ -1,10 +1,8 @@
-<html lang="fr">
 <header>
     <link rel="stylesheet" href="css/app.css">
     <div class="toggle"></div>
     <ul  class="navigation">
         <a class="logo-site" href="/">
-                    {{-- <img alt="Logo" class="logo-nav" src="/image/Logo Breizh's Cooks.png"> --}}
                     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
                     <lottie-player alt="Logo" class="logo-nav" src="/json-animation/Logo-Anim.json" background="transparent" speed="1.5" loop autoplay ></lottie-player>
                 </a>
@@ -49,13 +47,22 @@
                     </ul>
                 </li>
             </ul>
-            {{-- <span class="material-symbols-outlined">
-                    shopping_cart
-                </span> --}}
         </nav>
     </ul>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <ul  class="navigation-mobile">
+        <li><a class="link-navig" href="/nos-resto">Nos restaurants</a></li>
+        <li><a class="link-navig" href="/nos-menus">Nos Menus</a></li>
+        <li><a class="link-navig" href="{{ url('/register') }}">Votre panier</a></li>
+        @if (Route::has('login'))
+                @auth
+                    <li><a class="link-navig" href="{{ url('/dashboard') }}"><li class="dropdownItem-1" >Profil</a></li>
+                @else
+                    <li><a class="link-navig" href="{{ route('login') }}"><li class="dropdownItem-2" >Se connecter</a></li>
+                @endauth
+        @endif
+    </ul>
+    {{-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> --}}
+    <script src="js/app.js"></script>
 </header>
-<script src="js/app.js"></script>
-</html>
+

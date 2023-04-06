@@ -12,15 +12,18 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table = 'Compte';
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'LOGIN',
+        'NOM',
+        'PRENOM',
+        'EMAIL',
+        'MOT_DE_PASSE',
     ];
 
     /**
@@ -29,10 +32,29 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
+        'MOT_DE_PASSE',
         'remember_token',
     ];
+    public function getAuthPassword()
+    {
+        return $this->MOT_DE_PASSE;
+    }
 
+    /**
+     * Retourne l'identifiant de l'utilisateur
+     */
+    public function getAuthIdentifier()
+    {
+        return $this->EMAIL;
+    }
+
+    /**
+     * Retourne le nom de l'identifiant de l'utilisateur
+     */
+    public function getAuthIdentifierName()
+    {
+        return 'EMAIL';
+    }
     /**
      * The attributes that should be cast.
      *
