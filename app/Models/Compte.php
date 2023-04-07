@@ -70,18 +70,8 @@ class Compte extends Authenticatable
         return $this->EMAIL;
     }
 
-	public function emporters()
-	{
-		return $this->hasMany(Emporter::class, 'ID_COMPTE');
-	}
-
 	public function favorite()
 	{
 		return $this->hasOne(Favorite::class, 'ID_CLIENT');
-	}
-
-	public function places()
-	{
-		return $this->hasMany(Place::class, 'ID_COMPTE');
 	}
 }
