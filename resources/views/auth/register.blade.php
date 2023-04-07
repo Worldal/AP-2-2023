@@ -17,7 +17,7 @@
             <!-- login -->
             <div>
                 <x-input-label for="login" :value="__('Login')" />
-                <x-text-input id="login" class="block mt-1 w-full" type="text" name="name" :value="old('login')" required autofocus />
+                <x-text-input id="login" class="block mt-1 w-full" type="text" name="login" :value="old('login')" required autofocus />
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
             </div>
             <!-- name -->
@@ -29,7 +29,7 @@
             <!-- surname -->
             <div>
                 <x-input-label for="surname" :value="__('Nom de famille')" />
-                <x-text-input id="surname" class="block mt-1 w-full" type="text" name="name" :value="old('surname')" required autofocus />
+                <x-text-input id="surname" class="block mt-1 w-full" type="text" name="surname" :value="old('surname')" required autofocus />
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
             </div>
 
