@@ -72,6 +72,6 @@ class Compte extends Authenticatable
 
 	public function favorite()
 	{
-		return $this->hasOne(Favorite::class, 'ID_CLIENT');
+		return $this->hasMany(Favorite::class, 'ID_CLIENT');
 	}
 }
