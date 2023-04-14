@@ -9,7 +9,7 @@
         <nav class="nav-text">
             <li><a class="link-navig" href="/nos-resto">Nos restaurants</a></li>
 
-            <li><a class="link-navig" href="/nos-menus">Nos Menus</a></li>
+            <li><a class="link-navig" href="/menu">Nos Menus</a></li>
 
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />

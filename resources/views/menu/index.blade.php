@@ -1,7 +1,9 @@
+
 @include ('header')
+
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+    <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" sizes="32x32" href="/image/logo-breizhs-cooks-round-32px.png">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -14,18 +16,34 @@
     <meta name="googlebot" content="notranslate"/>
     <link rel="stylesheet" href="css/app.css">
     <meta name="color-scheme" content="only dark">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Le Menu</title>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-</head>
+    <meta name="creator" content="world_al">
+    <meta name="creator" content="It's AL">
+        <title>Le Menu</title>
+    </head>
 <body class="back">
     <div>
         <div class="part1">
             <video id="video-background" autoplay muted loop controlslist="nodownload nofullscreen noremoteplayback">
                 <source src="/videos/Food.webm" type="video/mp4">
             </video>
-            <h1>Le Menu arrive...</h1>
+            <h1>Le Menu !</h1>
         </div>
         <div class="part2">
+           
+            @foreach($plats as $plat)
+            
+                <h2 id="Ingredient" class="titre-acc"> {{$plat->TITRE_PLAT }}</h2>
+                <div  class="container-photo">
+                    <img class="photo-acc" src="/image/photo-groupe.webp">
+                    <p>
+                    {{$plat->DESCRIPTION_PLAT }}
+                    </p>
+                    
+                </div>
+                <P><HR NOSHADE></P>
+
+            @endforeach
         </div>
+    </div>
+</body>
 </html>

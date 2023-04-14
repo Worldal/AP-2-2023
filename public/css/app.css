@@ -146,6 +146,7 @@ body::-webkit-scrollbar-thumb {
 .navigation li
 {
     line-height: 80px;
+    margin-right: 40px;
 }
 #night-mode {
     stroke: black;
@@ -157,7 +158,6 @@ body::-webkit-scrollbar-thumb {
     font-size: 20px;
     position: relative;
     color:var(--darkMode);
-    margin-right: 40px;
     text-decoration: none;
     transition:0.5s ;
 }
@@ -685,6 +685,7 @@ body::-webkit-scrollbar-thumb {
   }
   .dropdown:hover .dropdown_menu li {
     display: block;
+    margin-right: 0px;
   }
   .dropdown_menu {
     position: absolute;

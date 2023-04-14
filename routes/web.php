@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\menuController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +24,16 @@ Route::get('/nos-resto', function () {
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/nos-menus', function () {
-    return view('menu');
-});
 
+/*MEEEEEEEEEEEEEEEENUUUUUUUUUUUUUU*/ 
+Route::get('/menu', [menuController::class, 'index'])->name('menu.index');
+
+
+
+
+
+
+/* blabla */
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
