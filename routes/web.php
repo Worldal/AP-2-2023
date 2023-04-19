@@ -27,6 +27,8 @@ Route::get('/about', function () {
 
 /*MEEEEEEEEEEEEEEEENUUUUUUUUUUUUUU*/ 
 Route::get('/menu', [menuController::class, 'index'])->name('menu.index');
+Route::get('/menu', [menuController::class, 'store'])->name('menu.store');
+Route::get('/validation', [menuController::class, 'validation'])->name('menu.validation');
 
 
 

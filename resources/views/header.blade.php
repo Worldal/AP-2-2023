@@ -51,7 +51,7 @@
     </ul>
     <ul  class="navigation-mobile">
         <li><a class="link-navig" href="/nos-resto">Nos restaurants</a></li>
-        <li><a class="link-navig" href="/nos-menus">Nos Menus</a></li>
+        <li><a class="link-navig" href="/menu">Nos Menus</a></li>
         <li><a class="link-navig" href="{{ url('/register') }}">Votre panier</a></li>
         @if (Route::has('login'))
                 @auth

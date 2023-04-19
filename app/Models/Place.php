@@ -31,10 +31,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Place extends Model
 {
-	protected $table = 'plat';
-	protected $primaryKey = 'ID_PLAT';
-	public $timestamps = false;
-
 	protected $fillable = [
 		'ID_COMMANDE',
 		'ID_COMPTE',
