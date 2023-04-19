@@ -6,14 +6,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Favorite;
+use Laravel\Sanctum\HasApiTokens;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Laravel\Sanctum\HasApiTokens;
 /**
  * Class Compte
  *
@@ -70,18 +71,8 @@ class Compte extends Authenticatable
         return $this->EMAIL;
     }
 
-	public function emporters()
-	{
-		return $this->hasMany(Emporter::class, 'ID_COMPTE');
-	}
-
 	public function favorite()
 	{
-		return $this->hasOne(Favorite::class, 'ID_CLIENT');
-	}
-
-	public function places()
-	{
-		return $this->hasMany(Place::class, 'ID_COMPTE');
+		return $this->hasMany(Favorite::class, 'ID_CLIENT');
 	}
 }

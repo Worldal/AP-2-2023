@@ -42,3 +42,5 @@ require __DIR__.'/auth.php';
 Route::fallback(function() {
     return view('404'); // la vue 404.blade.php
  });
+
+Route::view('/cart', 'cart.index');

@@ -14,18 +14,22 @@
     <meta name="googlebot" content="notranslate"/>
     <link rel="stylesheet" href="css/app.css">
     <meta name="color-scheme" content="only dark">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Le Menu</title>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Menu | Breizh Cooks</title>
 </head>
 <body class="back">
     <div>
         <div class="part1">
             <video id="video-background" autoplay muted loop controlslist="nodownload nofullscreen noremoteplayback">
-                <source src="/videos/Food.webm" type="video/mp4">
+                <source src="/videos/Food.webm" type="video/webm">
             </video>
-            <h1>Le Menu arrive...</h1>
+            <h1>Le Menu :</h1>
         </div>
         <div class="part2">
+            @foreach ($collection as $item)
+
+            @endforeach
+
+
         </div>
+
 </html>
