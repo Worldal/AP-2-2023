@@ -1,9 +1,23 @@
+<meta property="og:site_name" content="Breizh Cooks">
+<link rel="canonical" href="https://breizh-cooks.pq.lu/">
+<meta name="robots" content="index, follow">
+<meta property="og:image" content="/image/logo-breizhs-cooks-round.webp">
+<meta property="og:site_name" content="Breizh Cooks">
+<meta name="googlebot" content="notranslate"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/public/image/restau-centre-ville.webp">
+<link rel="stylesheet" href="css/app.css">
+
+
+<!-- <div class="loader-wrapper">
+    <span class="loader-inner"></span></span>
+</div> -->
+
 <?php
+
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 //
 define('LARAVEL_START', microtime(true));
-
 /*
 |--------------------------------------------------------------------------
 | Check If The Application Is Under Maintenance
@@ -52,3 +66,6 @@ $response = $kernel->handle(
 )->send();
 
 $kernel->terminate($request, $response);
+?>
+<script src="/js/app.js"></script>
+<script src="/js/lottie-player.js"></script>

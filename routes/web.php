@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MenuController;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +25,12 @@ Route::get('/nos-resto', function () {
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/nos-menus', function () {
-    return view('menu');
-});
+
+/*----- Menu -----*/
+
+Route::get('/menu', [menuController::class, 'index'])->name('menu.index');
+Route::get('/menu', [menuController::class, 'store'])->name('menu.store');
+Route::get('/validation', [menuController::class, 'validation'])->name('menu.validation');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -34,13 +39,17 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::delete('/logout', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
 
 require __DIR__.'/auth.php';
 
 Route::fallback(function() {
     return view('404'); // la vue 404.blade.php
- });
+});
 
-Route::view('/cart', 'cart.index');
+Route::get('/conditions', function () {
+    return view('condition');
+});

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Compte;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\ProfileUpdateRequest;
 
 class ProfileController extends Controller
 {
@@ -15,6 +17,14 @@ class ProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\View\View
      */
+    public function index()
+    {
+        // Récupère l'ID de l'utilisateur actuellement authentifié...
+        $id = Auth ::id();
+        $profil= Compte::where('ID_COMPTE', $id)->first();
+        return redirect()->route('dashboard' , compact('profil'));
+    }
+
     public function edit(Request $request)
     {
         return view('profile.edit', [
