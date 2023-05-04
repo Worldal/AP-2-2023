@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get('/nos-resto', function () {
     return view('nos-restaurant');
 });
-Route::get('/about', function () {
+Route::get('/a-propos', function () {
     return view('about');
 });
 
@@ -32,6 +32,7 @@ Route::get('/menu', [menuController::class, 'index'])->name('menu.index');
 Route::get('/menu', [menuController::class, 'store'])->name('menu.store');
 Route::get('/validation', [menuController::class, 'validation'])->name('menu.validation');
 
+Route::get('/dashboard', [ProfileController::class, 'index'])->name('profil.index');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

@@ -20,9 +20,10 @@ class ProfileController extends Controller
     public function index()
     {
         // Récupère l'ID de l'utilisateur actuellement authentifié...
-        $id = Auth ::id();
-        $profil= Compte::where('ID_COMPTE', $id)->first();
+        $user = Auth ::id();
+        $profil= Compte::where('ID_COMPTE', $user)->first();
         return redirect()->route('dashboard' , compact('profil'));
+
     }
 
     public function edit(Request $request)

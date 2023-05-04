@@ -14,7 +14,7 @@
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" /> --}}
             <ul class="menu">
                 <li class="dropdown dropdown-6">
-                        <lottie-player id="compte" alt="Logo" class="logo-nav" src="/json-animation/ComptePerson.json" background="transparent" speed="1" ></lottie-player>
+                        <lottie-player id="compte" alt="Logo" class="logo-nav" src="/json-animation/ComptePerson.json" background="transparent" speed="1" loop autoplay ></lottie-player>
                     <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-6">
 
                         @if (Route::has('login'))
@@ -49,9 +49,9 @@
         <li><a class="link-navig" href="{{ url('/register') }}">Votre panier</a></li>
         @if (Route::has('login'))
                 @auth
-                    <li><a class="link-navig" href="{{ url('/dashboard') }}"><li class="dropdownItem-1" >Profil</a></li>
+                    <li><a class="link-navig" href="{{ url('/dashboard') }}"><li class="dropdownItem-1">Profil</a></li>
                 @else
-                    <li><a class="link-navig" href="{{ route('login') }}"><li class="dropdownItem-2" >Se connecter</a></li>
+                    <li><a class="link-navig" href="{{ route('login') }}"><li class="dropdownItem-2">Se connecter</a></li>
                 @endauth
         @endif
     </ul>

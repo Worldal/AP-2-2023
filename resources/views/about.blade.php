@@ -12,10 +12,13 @@
         .back {
             background-color: blanchedalmond !important;
             margin:0px auto;
-            min-height: 500em;
+            min-height: 100em;
         }
     </style>
         <script src="js/app.js"></script>
+        <h3><br>D'ou nous sommes ?</h3>
+        <br>Nous sommes situés en Bretagne
 
 </body>
 </html>
+

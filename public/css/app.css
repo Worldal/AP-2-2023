@@ -185,6 +185,14 @@ body::-webkit-scrollbar-thumb {
 .list {
     list-style: inside;
 }
+.iframe {
+    width: 50%;
+    height: 90%;
+    margin: 0;
+    padding-right: 0px;
+    position: relative;
+    left: 0px;
+}
 .condition {
     padding: 5px;
     font-family: 'Courier New', Courier, monospace;
