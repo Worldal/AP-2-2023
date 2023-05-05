@@ -5,26 +5,24 @@
 <div class="part2">
     <div class="p-gauche">
     <h1>Bonjour
-        {{-- {{ $profil->PRENOM }} --}}
+        {{ $profil->PRENOM }}
     </h1>
-        <ul> <a href="">Informations</a></ul>
-        <ul> <a href="">Historique</a></ul>
-        <ul> <a href="#modification">Modifier</a></ul>
+        <ul> <a href="#info">Informations</a></ul>
+        <ul> <a href="#historique">Historique</a></ul>
+        <ul> <a href="#modif">Modifier</a></ul>
     </div>
-
     <div class="p-droite">
         <div>
             <p>
-                {{-- {{ $profil->EMAIL }} --}}
+                {{ $profil->EMAIL }}
             </p>
             <p>
-                {{-- {{ $profil->LOGIN }} --}}
+                {{ $profil->LOGIN }}
             </p>
         </div>
         <iframe class="iframe" id="Modification"
-        title="Modification profil" src="{{ url('/profile') }}">
+            title="Modification profil" src="{{ url('/profile') }}">
         </iframe>
     </div>
-
 </div>
 @include('footer')

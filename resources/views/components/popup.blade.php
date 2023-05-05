@@ -1,0 +1,1 @@
+Re-bienvenue {{ $profil->PRENOM }} !

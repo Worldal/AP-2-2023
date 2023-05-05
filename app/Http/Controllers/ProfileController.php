@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\ProfileUpdateRequest;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class ProfileController extends Controller
 {
@@ -17,13 +18,14 @@ class ProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        // Récupère l'ID de l'utilisateur actuellement authentifié...
-        $user = Auth ::id();
-        $profil= Compte::where('ID_COMPTE', $user)->first();
-        return redirect()->route('dashboard' , compact('profil'));
-
+        // Récupèrer l'ID de l'utilisateur actuellement authentifié...
+        $compte = Auth::user()->ID_COMPTE;
+        $profil = Compte::where('ID_COMPTE', $compte)->first();
+        return view('dashboard', [
+            'profil' => $profil,
+        ]);
     }
 
     public function edit(Request $request)

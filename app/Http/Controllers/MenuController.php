@@ -26,59 +26,64 @@ class menuController extends Controller
 
         $plats = Plat::all();
 
-        return redirect()->route('menu' , compact('plats'));
+        return view('menu.index', compact('plats'));
     }
 
     public function store(Request $request)
     {
+        // Récupération de l'id du compte connecté
+        // La table Compte a une clé primaire ID_COMPTE
+        $user = Auth::user()->ID_COMPTE;
 
-        $user = Auth::id();
-        if($user !=0 )
-        {
+        //Penser à remplacer "==" par "!="
+        // Pour que cela prend comme condition que c'est connecté
+        if ($user != NULL) {
             $platsIdWithQte = $request->input('orderId');
 
+            var_dump($_POST);
+
             $commande = new Emporter();
-            $commande->ID_CLIENT = $user;
+            $commande->ID_COMPTE = $user;
             $commande->DATE_COMMANDE = now();
 
+            // Date de retrait dans + 1h
+            $commande->DATE_RETRAIT = now()->addHour(1);
+
+            // Le commentaire null n'est pas accepté par la BDD, il faut donc mettre une valeur par défaut
+            // ici j'ai mis "Validation de l'AP"
+            $commande->COMMENTAIRE = "Validation de l'AP";
+
             $prixTotal = 0;
-            foreach($platsIdWithQte as $platId => $platQte)
-            {
+            foreach ($platsIdWithQte as $platId => $platQte) {
                 $plat = Plat::where('ID_PLAT', $platId)->first();
                 $prixTotal += $plat->PRIX_HT;
             }
             $commande->FACTURE = $prixTotal;
             $commande->save();
 
+            foreach ($platsIdWithQte as $platId => $platQte) {
+                $plat = Plat::where('ID_PLAT', $platId)->first();
 
-                foreach($platsIdWithQte as $platId => $platQte)
-                {
-                    $plat = Plat::where('ID_PLAT', $platId)->first();
+                if (!$plat->STOCK_PLAT = 0 && $platQte > 0) {
+                    // On ne peut pas commander plus de plats que ce qu'il y a en stock
+                    // On ne peut pas commander 0 plats
 
-                    if(!$plat->STOCK_PLAT = 0 && $platQte > 0)
-                    {
-                        $quantite = new QuantitePlatEmporter();
-                        $quantite->ID_COMMANDE_EMPORTER = $commande->id;
-                        $quantite->ID_PLAT = $platId;
-                        $quantite->QUANTITE = $platQte;
-                        $quantite->save();
-                    }
-                    else
-                    {
-                        return redirect()->route('menu');
-                    }
+                    $quantite = new QuantitePlatEmporter();
+                    $quantite->ID_COMMANDE_EMPORTER = $commande->id;
+                    $quantite->ID_PLAT = $platId;
+                    $quantite->QUANTITE = $platQte;
+                    $quantite->save();
                 }
-                return redirect()->route('menu');
             }
-        else
-        {
+
+            return redirect()->route('menu.validation');
+        } else {
             return redirect()->route('login');
         }
     }
 
     public function validation()
     {
-        return redirect()->route('validation');
+        return view('menu.validation');
     }
 }
-

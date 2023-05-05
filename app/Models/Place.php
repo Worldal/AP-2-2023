@@ -6,6 +6,7 @@
 
 namespace App\Models;
 
+use Doctrine\DBAL\Query;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
@@ -38,4 +39,10 @@ class Place extends Model
 		'FACTURE',
 		'DATE_COMMANDE'
 	];
+
+	public function places()
+	{
+		return $this->hasMany(QuantitePlatPlace::class, 'quantite_plat_place', 'ID_PLAT', 'ID_COMMANDE_PLACE')
+					->withPivot('QUANTITE');
+	}
 }

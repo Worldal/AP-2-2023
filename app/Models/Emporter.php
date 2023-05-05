@@ -6,57 +6,50 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Emporter
- * 
- * @property int $ID_COMMANDE
- * @property int $ID_COMPTE
- * @property Carbon $DATE_RETRAIT
- * @property string $COMMENTAIRE
- * @property bool $FACTURE
- * @property Carbon $DATE_COMMANDE
- * 
- * @property Compte $compte
- * @property Collection|Plat[] $plats
+ * Class Plat
+ *
+ * @property int $ID_PLAT
+ * @property string $TITRE_PLAT
+ * @property string $DESCRIPTION_PLAT
+ * @property int $PRIX_HT
+ * @property int $STOCK_PLAT
+ * @property bool $ESTPLATDUJOUR
+ * @property string $LIEN_IMG
+ *
+ * @property Collection|Appartenir[] $appartenirs
+ * @property Collection|Contenir[] $contenirs
+ * @property Favorite $favorite
+ * @property Collection|Emporter[] $emporters
+ * @property Collection|Place[] $places
+ * @property Collection|Reapprovisionnement[] $reapprovisionnements
  *
  * @package App\Models
  */
 class Emporter extends Model
 {
-	protected $table = 'emporter';
-	protected $primaryKey = 'ID_COMMANDE';
-	public $timestamps = false;
-
-	protected $casts = [
-		'ID_COMPTE' => 'int',
-		'FACTURE' => 'bool'
-	];
-
-	protected $dates = [
-		'DATE_RETRAIT',
-		'DATE_COMMANDE'
-	];
+    // Permet de nommer la table de la base de données
+    // Ici la table en base de données s'appelle "emporter"
+    protected $table = 'emporter';
 
 	protected $fillable = [
+		'ID_COMMANDE',
 		'ID_COMPTE',
 		'DATE_RETRAIT',
-		'COMMENTAIRE',
+        'COMMENTAIRE',
 		'FACTURE',
 		'DATE_COMMANDE'
 	];
 
-	public function compte()
-	{
-		return $this->belongsTo(Compte::class, 'ID_COMPTE');
-	}
+    // Désactive les colonnes created_at et updated_at (car elles ne sont pas présentes dans la table)
+    public $timestamps = false;
 
-	public function plats()
+	public function emporters()
 	{
-		return $this->belongsToMany(Plat::class, 'quantite_plat_emporter', 'ID_COMMANDE_EMPORTER', 'ID_PLAT')
+		return $this->hasMany(QuantitePlatEmporter::class, 'quantite_plat_emporter', 'ID_PLAT', 'ID_COMMANDE_EMPORTER')
 					->withPivot('QUANTITE');
 	}
 }

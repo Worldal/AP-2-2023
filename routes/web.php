@@ -27,23 +27,17 @@ Route::get('/a-propos', function () {
 });
 
 /*----- Menu -----*/
-
 Route::get('/menu', [menuController::class, 'index'])->name('menu.index');
-Route::get('/menu', [menuController::class, 'store'])->name('menu.store');
+Route::post('/menu', [menuController::class, 'store'])->name('menu.store');
 Route::get('/validation', [menuController::class, 'validation'])->name('menu.validation');
 
-Route::get('/dashboard', [ProfileController::class, 'index'])->name('profil.index');
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/logout', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-
 
 require __DIR__.'/auth.php';
 
